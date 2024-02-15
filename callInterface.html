@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support Dashboard</title>
+  </head>
+  <style>
+    body {
+      background-color: #35383f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .col {
+      display: grid;
+      justify-content: center;
+      margin: 0px;
+      flex-wrap: wrap;
+    }
+    .callBox {
+      width: 400px;
+      height: 200px;
+      margin: 5px;
+      background-color: #9a69ae;
+      border-radius: 20px;
+      border: 10px solid #74c362;
+    }
+    .grayscale {
+      background-color: #71747a;
+      border-color: #95979c;
+    }
+    .color {
+      background-color: #9a69ae;
+      border-color: #74c362;
+    }
+    .onCall {
+      background-color: #9a69ae;
+      border-color: #c36262;
+    }
+  </style>
+  <body>
+    <div class="col">
+      <div class="callBox" id="callBox1"></div>
+      <div class="callBox" id="callBox5"></div>
+      <div class="callBox" id="callBox9"></div>
+      <div class="callBox" id="callBox13"></div>
+    </div>
+    <div class="col">
+      <div class="callBox" id="callBox2"></div>
+      <div class="callBox" id="callBox6"></div>
+      <div class="callBox" id="callBox10"></div>
+      <div class="callBox" id="callBox14"></div>
+    </div>
+    <div class="col">
+      <div class="callBox" id="callBox3"></div>
+      <div class="callBox" id="callBox7"></div>
+      <div class="callBox" id="callBox11"></div>
+      <div class="callBox" id="callBox15"></div>
+    </div>
+    <div class="col">
+      <div class="callBox" id="callBox4"></div>
+      <div class="callBox" id="callBox8"></div>
+      <div class="callBox" id="callBox12"></div>
+      <div class="callBox" id="callBox16"></div>
+    </div>
+    <!--
+    <button onclick="changeColor()">Change Color</button>
+    <button onclick="onCall()">On Call</button>
+    -->
+
+    <script>
+      function changeColor() {
+        var callbox = document.getElementById("callBox1");
+        if (callbox.classList.contains("grayscale")) {
+          callbox.classList.remove("grayscale");
+          callbox.classList.add("color");
+        } else {
+          callbox.classList.remove("color");
+          callbox.classList.add("grayscale");
+        }
+      }
+      function onCall() {
+        var callbox = document.getElementById("callBox1");
+        if (callbox.classList.contains("color")) {
+          callbox.classList.remove("color");
+          callbox.classList.add("onCall");
+        } else {
+          callbox.classList.remove("onCall");
+          callbox.classList.add("color");
+        }
+      }
+    </script>
+  </body>
+</html>
